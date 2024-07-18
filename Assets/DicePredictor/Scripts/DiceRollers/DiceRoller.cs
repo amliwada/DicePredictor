@@ -7,12 +7,12 @@ public class DiceRoller : MonoBehaviour, IDiceRoller
 
     [SerializeField] private List<Dice> _dices;
 
-    public List<Dice> Dices { get => _dices; set => _dices = value; }
+    public List<Dice> Dices { get => _dices; }
 
     public void Roll()
     {
         MoveDicesToRollPositions();
-        AddVelocityToDices();
+        SetRandomDicesTransform();
         ShowDices();
     }
 
@@ -26,15 +26,15 @@ public class DiceRoller : MonoBehaviour, IDiceRoller
         }
     }
 
-    private void AddVelocityToDices()
+    private void SetRandomDicesTransform()
     {
         foreach (var dice in Dices)
         {
-            SetRandomPosition(dice);
+            SetRandomTransform(dice);
         }
     }
 
-    private void SetRandomPosition(Dice dice)
+    private void SetRandomTransform(Dice dice)
     {
         RotateDice(dice);
         SetDiceVelocity(dice);
@@ -59,7 +59,7 @@ public class DiceRoller : MonoBehaviour, IDiceRoller
 
     private void SetDiceTorque(Dice dice)
     {
-        dice.SetTorque(50, 50, 50);
+        dice.AddTorque(50, 50, 50);
     }
 
     private void ShowDices()

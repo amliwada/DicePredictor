@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class DiceFaceModifier : MonoBehaviour, IRollingModifier
@@ -8,7 +7,7 @@ public class DiceFaceModifier : MonoBehaviour, IRollingModifier
 
     public IDiceFaceModifierSettings Settings { get => _settings; set => _settings = value; }
 
-    public List<Dice> Dices { get => _targetRoller.Dices; set => _targetRoller.Dices = value; }
+    public List<Dice> Dices { get => _targetRoller.Dices; }
 
     public IDiceRoller TargetRoller { get => _targetRoller; set => _targetRoller = value; }
 
@@ -21,8 +20,6 @@ public class DiceFaceModifier : MonoBehaviour, IRollingModifier
     public void Roll()
     {
         SimulateRolling();
-        SetRollingResults();
-        MoveDicesToStartPosition();
         ModifyRollingPhysic();
         StartModifiedPhysic();
     }
@@ -30,25 +27,6 @@ public class DiceFaceModifier : MonoBehaviour, IRollingModifier
     private void SimulateRolling()
     {
         _simulator.Simulate(TargetRoller);
-    }
-
-    private void SetRollingResults()
-    {
-        foreach (var dice in Dices)
-        {
-            dice.SetResult();
-        }
-    }
-
-    private void MoveDicesToStartPosition()
-    {
-        var startRecord = _simulator.SimulationRecords.First();
-
-        foreach (var frame in startRecord.Frames)
-        {
-            frame.Dice.MoveTo(frame.Position);
-            frame.Dice.RotateTo(frame.Rotation);
-        }
     }
 
     private void ModifyRollingPhysic()

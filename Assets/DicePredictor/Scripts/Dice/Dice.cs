@@ -10,8 +10,6 @@ public class Dice : MonoBehaviour
     [SerializeField] private Rigidbody _rigibody;
     [SerializeField] private Transform _meshTransform;
 
-    private int _resultFaceIndex;
-
     public void MoveTo(Vector3 value)
     {
         transform.position = value;
@@ -33,7 +31,7 @@ public class Dice : MonoBehaviour
         _rigibody.velocity = new Vector3(x, y, z);
     }
 
-    public void SetTorque(float x, float y, float z)
+    public void AddTorque(float x, float y, float z)
     {
         _rigibody.AddTorque(new Vector3(x, y, z), ForceMode.VelocityChange);
     }
@@ -43,19 +41,6 @@ public class Dice : MonoBehaviour
         var isVelocityZero = _rigibody.velocity == Vector3.zero;
         var isAngularVelocityZero = _rigibody.angularVelocity == Vector3.zero;
         return isVelocityZero && isAngularVelocityZero;
-    }
-
-    public void SetResult()
-    {
-        _resultFaceIndex = 0;
-
-        for (int i = 1; i < _facesTransformList.Count; i++)
-        {
-            if (_facesTransformList[_resultFaceIndex].position.y < _facesTransformList[i].position.y)
-            {
-                _resultFaceIndex = i;
-            }
-        }
     }
 
     public void Hide()
@@ -70,13 +55,24 @@ public class Dice : MonoBehaviour
 
     public void RotateToFace(int toFaceIndex)
     {
-        if (_resultFaceIndex == toFaceIndex)
+        var upperFaceIndex = GetUpperFaceIndex();
+        var faceRotation = _diceRotationsProvider.GetRotationFromToFace(upperFaceIndex, toFaceIndex);
+        RotateTo(faceRotation);
+    }
+
+    private int GetUpperFaceIndex()
+    {
+        var upperFaceIndex = 0;
+
+        for (int i = 1; i < _facesTransformList.Count; i++)
         {
-            return;
+            if (_facesTransformList[upperFaceIndex].position.y < _facesTransformList[i].position.y)
+            {
+                upperFaceIndex = i;
+            }
         }
 
-        var faceRotation = _diceRotationsProvider.GetRotationFromToFace(_resultFaceIndex, toFaceIndex);
-        RotateTo(faceRotation);
+        return upperFaceIndex;
     }
 
     private void RotateTo(Vector3 value)

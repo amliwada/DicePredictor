@@ -49,6 +49,11 @@ public class RollingPhysicSimulator
 
         foreach (var dice in _dices)
         {
+            if (dice.IsStopped())
+            {
+                continue;
+            }
+
             var frame = new PhysicFrame(dice);
             physicRecord.AddFrame(frame);
         }

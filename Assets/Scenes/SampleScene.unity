@@ -1037,7 +1037,7 @@ GameObject:
   - component: {fileID: 1732485891}
   - component: {fileID: 1732485890}
   m_Layer: 0
-  m_Name: Dice
+  m_Name: DiceRoller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
