@@ -680,7 +680,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 4
-  m_Spacing: 20
+  m_Spacing: 100
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
@@ -904,7 +904,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3464027062810928730, guid: 25a009db5d2a920409691b14600346d8, type: 3}
       propertyPath: m_Name
-      value: RollButton
+      value: Roll66Button
       objectReference: {fileID: 0}
     - target: {fileID: 3605678080787327050, guid: 25a009db5d2a920409691b14600346d8, type: 3}
       propertyPath: m_Pivot.x
@@ -932,7 +932,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3605678080787327050, guid: 25a009db5d2a920409691b14600346d8, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 81.31
+      value: 121.49
       objectReference: {fileID: 0}
     - target: {fileID: 3605678080787327050, guid: 25a009db5d2a920409691b14600346d8, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1012,7 +1012,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8183179509814761991, guid: 25a009db5d2a920409691b14600346d8, type: 3}
       propertyPath: m_text
-      value: 'Roll
+      value: 'Roll 6:6
 
 '
       objectReference: {fileID: 0}
