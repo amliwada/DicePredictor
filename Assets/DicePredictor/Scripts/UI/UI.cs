@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class UI : MonoBehaviour, IDiceFaceModifierSettings
 {
-    [SerializeField] private ForwardDirectionRoller _forwardDirectionRoller;
+    [SerializeField] private DiceRoller _diceRoller;
     [SerializeField] private DiceFaceModifier _diceFaceModifier;
 
     public int DiceAmount => 2;
@@ -18,7 +18,7 @@ public class UI : MonoBehaviour, IDiceFaceModifierSettings
 
     public void Roll()
     {
-        IDiceRoller diceRoller = _forwardDirectionRoller;
+        IDiceRoller diceRoller = _diceRoller;
 
         _diceFaceModifier.TargetRoller = diceRoller;
         diceRoller = _diceFaceModifier;

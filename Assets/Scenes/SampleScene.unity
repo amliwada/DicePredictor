@@ -781,7 +781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbc366f35485adc4fa7a232da2fd232f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _forwardDirectionRoller: {fileID: 1732485890}
+  _diceRoller: {fileID: 1732485890}
   _diceFaceModifier: {fileID: 910790551}
 --- !u!114 &1403266806
 MonoBehaviour:
@@ -968,11 +968,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3605678080787327050, guid: 25a009db5d2a920409691b14600346d8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 141.8
+      value: 137.525
       objectReference: {fileID: 0}
     - target: {fileID: 3605678080787327050, guid: 25a009db5d2a920409691b14600346d8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -329.5
+      value: -368.5
       objectReference: {fileID: 0}
     - target: {fileID: 3605678080787327050, guid: 25a009db5d2a920409691b14600346d8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1037,7 +1037,7 @@ GameObject:
   - component: {fileID: 1732485891}
   - component: {fileID: 1732485890}
   m_Layer: 0
-  m_Name: ForwardDirectionRoller
+  m_Name: Dice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ForwardDirectionRoller : MonoBehaviour, IDiceRoller
+public class DiceRoller : MonoBehaviour, IDiceRoller
 {
     [SerializeField] private List<Transform> _rollPositions;
 
