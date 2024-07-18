@@ -5,8 +5,6 @@ public class UI : MonoBehaviour, IDiceFaceModifierSettings
     [SerializeField] private DiceRoller _diceRoller;
     [SerializeField] private DiceFaceModifier _diceFaceModifier;
 
-    public int DiceAmount => 2;
-
     public int RequiredFaceIndex { get => _requiredFaceIndex; }
 
     private int _requiredFaceIndex = 5;
