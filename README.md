@@ -18,13 +18,13 @@ https://github.com/user-attachments/assets/26b10267-f173-425b-a2a6-9bd7cf2b4c52
 ## DiceFaceModifier
 Изменяет выпавшее значение брошенных кубиков.
 
-1. Начинает работу с симуляции броска кубиков через объект `RollingPhysicSimulator`
+1. Начинает работу с симуляции броска кубиков через объект `RollingPhysicSimulator`:
 
 https://github.com/amliwada/DicePredictor/blob/b0caa8ebbb8a1722a0914c9555b1a91a0747cb0a/Assets/DicePredictor/Scripts/Modifiers/DiceFaceModifier.cs#L27-L30
 
 Результатом работы симулятора является список кадров, которые хранят положение кубиков в пространстве с момента их броска до полной остановки.
 
-2. После того как все кубики упадут, они поворачиваются таким образом, чтобы верхняя грань показывала на заранее заданное число
+2. После того как все кубики упадут, они поворачиваются таким образом, чтобы верхняя грань показывала на заранее заданное число:
 
 https://github.com/amliwada/DicePredictor/blob/b0caa8ebbb8a1722a0914c9555b1a91a0747cb0a/Assets/DicePredictor/Scripts/Modifiers/DiceFaceModifier.cs#L32-L38
 
