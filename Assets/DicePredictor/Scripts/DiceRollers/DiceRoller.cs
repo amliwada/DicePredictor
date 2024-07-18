@@ -51,7 +51,7 @@ public class DiceRoller : MonoBehaviour, IDiceRoller
 
     private void SetDiceVelocity(Dice dice)
     {
-        float x = 0;
+        float x = Random.Range(-2, 2);
         float y = Random.Range(10, 15);
         float z = Random.Range(15, 20);
         dice.SetVelocity(x, y, z);
