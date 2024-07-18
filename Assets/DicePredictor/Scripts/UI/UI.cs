@@ -1,8 +1,7 @@
 using UnityEngine;
 
-public class UI : MonoBehaviour, IRollingSettingsProvider, IDiceFaceModifierSettings
+public class UI : MonoBehaviour, IDiceFaceModifierSettings
 {
-    [SerializeField] private RandomDirectionRoller _randomDirectionRoller;
     [SerializeField] private ForwardDirectionRoller _forwardDirectionRoller;
     [SerializeField] private DiceFaceModifier _diceFaceModifier;
 
@@ -12,19 +11,14 @@ public class UI : MonoBehaviour, IRollingSettingsProvider, IDiceFaceModifierSett
 
     private int _requiredFaceIndex = 5;
 
-    private IDiceRoller _selectedRoller;
-
     private void Start()
     {
-        _randomDirectionRoller.SettingsProvider = this;
         _diceFaceModifier.Settings = this;
-
-        _selectedRoller = _forwardDirectionRoller;
     }
 
     public void Roll()
     {
-        IDiceRoller diceRoller = _selectedRoller;
+        IDiceRoller diceRoller = _forwardDirectionRoller;
 
         _diceFaceModifier.TargetRoller = diceRoller;
         diceRoller = _diceFaceModifier;
